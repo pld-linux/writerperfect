@@ -1,19 +1,21 @@
 Summary:	Converting WordPerfect(TM) documents into OpenOffice.org formats
 Summary(pl.UTF-8):	Konwersja dokumentów WordPerfecta(TM) na formaty OpenOffice.org
 Name:		writerperfect
-Version:	0.8.2
+Version:	0.8.3
 Release:	1
 License:	GPL v2
 Group:		Applications/Publishing
 Source0:	http://downloads.sourceforge.net/libwpd/%{name}-%{version}.tar.xz
-# Source0-md5:	392b503d7ec0c96a0755410d5ce8bd76
+# Source0-md5:	83b84429f17aaa68bcc87141fef9672d
 URL:		http://libwpd.sourceforge.net/
 BuildRequires:	glib2-devel >= 2.0.0
 BuildRequires:	libcdr-devel >= 0.0.5
+BuildRequires:	libetonyek-devel
+BuildRequires:	libfreehand-devel
 BuildRequires:	libgsf-devel >= 1.12.0
 BuildRequires:	libmspub-devel
-BuildRequires:	libmwaw-devel >= 0.1
-BuildRequires:	libodfgen-devel
+BuildRequires:	libmwaw-devel >= 0.2
+BuildRequires:	libodfgen-devel >= 0.0.3
 BuildRequires:	libstdc++-devel
 BuildRequires:	libvisio-devel >= 0.0.20
 BuildRequires:	libwpd-devel >= 0.9.0
@@ -24,7 +26,8 @@ BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 Requires:	libcdr >= 0.0.5
 Requires:	libgsf >= 1.12.0
-Requires:	libmwaw >= 0.1
+Requires:	libmwaw >= 0.2
+Requires:	libodfgen >= 0.0.3
 Requires:	libvisio >= 0.0.20
 Requires:	libwpd >= 0.9.0
 Requires:	libwpg >= 0.2.0
@@ -67,6 +70,8 @@ rm -rf $RPM_BUILD_ROOT
 %doc ChangeLog NEWS README
 %attr(755,root,root) %{_bindir}/cdr2odg
 %attr(755,root,root) %{_bindir}/cmx2odg
+%attr(755,root,root) %{_bindir}/fh2odg
+%attr(755,root,root) %{_bindir}/key2odp
 %attr(755,root,root) %{_bindir}/mwaw2odt
 %attr(755,root,root) %{_bindir}/pub2odg
 %attr(755,root,root) %{_bindir}/vsd2odg
