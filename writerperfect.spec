@@ -2,12 +2,12 @@
 Summary:	Converting WordPerfect(TM) documents into OpenOffice.org formats
 Summary(pl.UTF-8):	Konwersja dokumentów WordPerfecta(TM) na formaty OpenOffice.org
 Name:		writerperfect
-Version:	0.9.0
+Version:	0.9.1
 Release:	1
 License:	GPL v2
 Group:		Applications/Publishing
 Source0:	http://downloads.sourceforge.net/libwpd/%{name}-%{version}.tar.xz
-# Source0-md5:	e22f15f92902fbc227e99475852ee3a6
+# Source0-md5:	a6c624072e662e721382f9af1d818e74
 URL:		http://libwpd.sourceforge.net/
 BuildRequires:	glib2-devel >= 2.0.0
 BuildRequires:	libabw-devel >= 0.1
@@ -19,7 +19,7 @@ BuildRequires:	libgsf-devel >= 1.12.0
 BuildRequires:	libmspub-devel >= 0.1
 BuildRequires:	libmwaw-devel >= 0.3
 BuildRequires:	libodfgen-devel >= 0.1
-BuildRequires:	librevenge-devel >= 0.0
+BuildRequires:	librevenge-devel >= 0.0.1
 BuildRequires:	libstdc++-devel >= 6:4.3
 BuildRequires:	libvisio-devel >= 0.1
 BuildRequires:	libwpd-devel >= 0.10
@@ -37,6 +37,7 @@ Requires:	libgsf >= 1.12.0
 Requires:	libmspub >= 0.1
 Requires:	libmwaw >= 0.3
 Requires:	libodfgen >= 0.1
+Requires:	librevenge >= 0.0.1
 Requires:	libvisio >= 0.1
 Requires:	libwpd >= 0.10
 Requires:	libwpg >= 0.3
