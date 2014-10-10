@@ -3,7 +3,7 @@ Summary:	Converting WordPerfect(TM) documents into OpenOffice.org formats
 Summary(pl.UTF-8):	Konwersja dokumentów WordPerfecta(TM) na formaty OpenOffice.org
 Name:		writerperfect
 Version:	0.9.1
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		Applications/Publishing
 Source0:	http://downloads.sourceforge.net/libwpd/%{name}-%{version}.tar.xz
