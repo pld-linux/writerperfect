@@ -1,12 +1,12 @@
 Summary:	Converting WordPerfect(TM) documents into OpenOffice.org formats
 Summary(pl.UTF-8):	Konwersja dokumentów WordPerfecta(TM) na formaty OpenOffice.org
 Name:		writerperfect
-Version:	0.9.4
-Release:	2
+Version:	0.9.5
+Release:	1
 License:	GPL v2
 Group:		Applications/Publishing
 Source0:	http://downloads.sourceforge.net/libwpd/%{name}-%{version}.tar.xz
-# Source0-md5:	bc1b90a4d4b0184a078bf5ceb9b36fda
+# Source0-md5:	d7f1faa71bc0278d68ba0cf24dadfcdf
 URL:		http://libwpd.sourceforge.net/
 BuildRequires:	glib2-devel >= 2.0.0
 BuildRequires:	libabw-devel >= 0.1
@@ -23,7 +23,8 @@ BuildRequires:	libodfgen-devel >= 0.1
 BuildRequires:	libpagemaker-devel >= 0.0
 BuildRequires:	librevenge-devel >= 0.0.1
 BuildRequires:	librvngabw-devel >= 0.0
-BuildRequires:	libstdc++-devel >= 6:4.3
+BuildRequires:	libstaroffice-devel >= 0.0
+BuildRequires:	libstdc++-devel >= 6:4.7
 BuildRequires:	libvisio-devel >= 0.1
 BuildRequires:	libwpd-devel >= 0.10
 BuildRequires:	libwpg-devel >= 0.3
@@ -66,7 +67,6 @@ Narzędzia do konwertowania dokumentów:
 %setup -q
 
 %build
-CXXFLAGS="%{rpmcxxflags} -std=c++0x"
 %configure \
 	--disable-silent-rules \
 	--with-libgsf \
@@ -110,6 +110,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/pmd2odg
 %attr(755,root,root) %{_bindir}/pub2epub
 %attr(755,root,root) %{_bindir}/pub2odg
+%attr(755,root,root) %{_bindir}/sd2odf
 %attr(755,root,root) %{_bindir}/vsd2epub
 %attr(755,root,root) %{_bindir}/vsd2odg
 %attr(755,root,root) %{_bindir}/vss2epub
