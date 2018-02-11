@@ -1,0 +1,11 @@
+--- writerperfect-0.9.6/src/lib/OutputFileHelper.cxx~	2017-05-03 20:55:03.000000000 +0200
++++ writerperfect-0.9.6/src/lib/OutputFileHelper.cxx	2018-02-11 10:48:16.155693729 +0100
+@@ -57,7 +57,7 @@
+ OutputFileHelperImpl::~OutputFileHelperImpl()
+ {
+ #ifdef USE_GSF_OUTPUT
+-	if (mpOutfile && !gsf_output_close((GsfOutput *) mpOutfile.get()))
++	if (mpOutfile && !gsf_output_close((GsfOutput *) mpOutfile))
+ 		fprintf(stderr, "ERROR : Couldn't close outfile\n");
+ 
+ 	if (mpOutfile)
