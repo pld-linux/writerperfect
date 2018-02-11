@@ -8,6 +8,7 @@ Group:		Applications/Publishing
 Source0:	http://downloads.sourceforge.net/libwpd/%{name}-%{version}.tar.xz
 # Source0-md5:	9b554883621a9a1809c2582a6d2febd4
 Patch0:		libgsf-build.patch
+Patch1:		link.patch
 URL:		http://libwpd.sourceforge.net/
 BuildRequires:	glib2-devel >= 2.0.0
 BuildRequires:	libabw-devel >= 0.1
@@ -67,6 +68,7 @@ Narzędzia do konwertowania dokumentów:
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 %configure \
@@ -113,6 +115,8 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/pmd2odg
 %attr(755,root,root) %{_bindir}/pub2epub
 %attr(755,root,root) %{_bindir}/pub2odg
+%attr(755,root,root) %{_bindir}/sd2abw
+%attr(755,root,root) %{_bindir}/sd2epub
 %attr(755,root,root) %{_bindir}/sd2odf
 %attr(755,root,root) %{_bindir}/vsd2epub
 %attr(755,root,root) %{_bindir}/vsd2odg
@@ -122,6 +126,9 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/wpd2abw
 %attr(755,root,root) %{_bindir}/wpd2epub
 %attr(755,root,root) %{_bindir}/wpd2odt
+%attr(755,root,root) %{_bindir}/wpft2abw
+%attr(755,root,root) %{_bindir}/wpft2epub
+%attr(755,root,root) %{_bindir}/wpft2odf
 %attr(755,root,root) %{_bindir}/wpg2epub
 %attr(755,root,root) %{_bindir}/wpg2odg
 %attr(755,root,root) %{_bindir}/wps2abw
