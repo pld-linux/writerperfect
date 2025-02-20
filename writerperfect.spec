@@ -10,6 +10,8 @@ Source0:	https://downloads.sourceforge.net/libwpd/%{name}-%{version}.tar.xz
 Patch0:		libgsf-build.patch
 Patch1:		link.patch
 URL:		https://libwpd.sourceforge.net/
+BuildRequires:	autoconf >= 2.65
+BuildRequires:	automake >= 1:1.11
 BuildRequires:	glib2-devel >= 2.0.0
 BuildRequires:	libabw-devel >= 0.1
 BuildRequires:	libcdr-devel >= 0.1
@@ -23,14 +25,17 @@ BuildRequires:	libmspub-devel >= 0.1
 BuildRequires:	libmwaw-devel >= 0.3
 BuildRequires:	libodfgen-devel >= 0.1
 BuildRequires:	libpagemaker-devel >= 0.0
+BuildRequires:	libqxp-devel >= 0.0
 BuildRequires:	librevenge-devel >= 0.0.1
 BuildRequires:	librvngabw-devel >= 0.0
 BuildRequires:	libstaroffice-devel >= 0.0
 BuildRequires:	libstdc++-devel >= 6:4.7
+BuildRequires:	libtool >= 2:2
 BuildRequires:	libvisio-devel >= 0.1
 BuildRequires:	libwpd-devel >= 0.10.2
 BuildRequires:	libwpg-devel >= 0.3.2
 BuildRequires:	libwps-devel >= 0.4.8
+BuildRequires:	libzmf-devel >= 0.0
 BuildRequires:	pkgconfig >= 1:0.20
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
@@ -71,6 +76,11 @@ Narzędzia do konwertowania dokumentów:
 %patch -P1 -p1
 
 %build
+%{__libtoolize}
+%{__aclocal} -I m4
+%{__autoconf}
+%{__autoheader}
+%{__automake}
 %configure \
 	--disable-silent-rules \
 	--disable-werror \
@@ -115,6 +125,8 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/pmd2odg
 %attr(755,root,root) %{_bindir}/pub2epub
 %attr(755,root,root) %{_bindir}/pub2odg
+%attr(755,root,root) %{_bindir}/qxp2epub
+%attr(755,root,root) %{_bindir}/qxp2odg
 %attr(755,root,root) %{_bindir}/sd2abw
 %attr(755,root,root) %{_bindir}/sd2epub
 %attr(755,root,root) %{_bindir}/sd2odf
@@ -134,3 +146,5 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/wps2abw
 %attr(755,root,root) %{_bindir}/wps2epub
 %attr(755,root,root) %{_bindir}/wps2odt
+%attr(755,root,root) %{_bindir}/zmf2epub
+%attr(755,root,root) %{_bindir}/zmf2odg
