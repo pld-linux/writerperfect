@@ -5,11 +5,11 @@ Version:	0.9.6
 Release:	1
 License:	GPL v2
 Group:		Applications/Publishing
-Source0:	http://downloads.sourceforge.net/libwpd/%{name}-%{version}.tar.xz
+Source0:	https://downloads.sourceforge.net/libwpd/%{name}-%{version}.tar.xz
 # Source0-md5:	9b554883621a9a1809c2582a6d2febd4
 Patch0:		libgsf-build.patch
 Patch1:		link.patch
-URL:		http://libwpd.sourceforge.net/
+URL:		https://libwpd.sourceforge.net/
 BuildRequires:	glib2-devel >= 2.0.0
 BuildRequires:	libabw-devel >= 0.1
 BuildRequires:	libcdr-devel >= 0.1
