@@ -48,10 +48,10 @@ Requires:	libvisio >= 0.1
 Requires:	libwpd >= 0.10
 Requires:	libwpg >= 0.3
 Requires:	libwps >= 0.4
-Obsoletes:	wpd2odt
-Obsoletes:	wpd2sxw
-Obsoletes:	wps2odt
-Obsoletes:	wps2sxw
+Obsoletes:	wpd2odt < 0.7
+Obsoletes:	wpd2sxw < 0.8.1
+Obsoletes:	wps2odt < 0.7
+Obsoletes:	wps2sxw < 0.7
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
